@@ -26,6 +26,6 @@ function translate(locale: Locale, key: string, vars: {[key: string]: string}) {
   return text;
 }
 
-export const t = derived(locale, ($locale) => (key: string, vars = {}) =>
+export const say = derived(locale, ($locale) => (key: string, vars = {}) =>
   translate($locale as Locale, key, vars)
 );

@@ -1,9 +1,70 @@
-<main class="resumo">
-  Me chamo Bernardo Melo Roth de Oliveira, nascido em 8 de Março de 2005 (18 anos). Aprendo programação desde os 13 anos, iniciando em cursos online pela plataforma Udemy e YouTube e eventualmente lendo livros como The C Programming Language, The Rust Programming Language e The Python Programming Language e também Automate the Boring Stuff with Python, Java for Dummies e C: A Software Engineering Approach.
-  <br>
-  Completei o Ensino Médio com média 8,5 em Novembro de 2022, realizando a prova do ENEM com média final de 784.4 em Matemática e suas Tecnologias e 800 em Redação. Também realizei os vestibulares da PUCRS e Unisinos, passando em ambos e me matriculando na Unisinos em Janeiro de 2023 em Ciências da Computação.
+<script lang="ts">
+  import { say } from '$lib/i18n';
+
+  const age = (new Date().getFullYear()) - 2005;
+</script>
+
+<main>
+    <section>
+      <h1>{$say("about.summary.title")}</h1>
+      <p>
+        <span class="tab"></span>{$say("about.summary", { age })}
+      </p>
+    </section>
+
+    <section>
+      <h1>{$say("about.education.title")}</h1>
+      <p>
+        <span class="tab"></span>{$say("about.education")}
+      </p>
+    </section>
+  
+    <section>
+      <h1>{$say("about.autism.title")}</h1>
+      <p>
+        <span class="tab"></span>{$say("about.autism")}
+      </p>
+    </section>
 </main>
 
-<main class="tea">
-É importante notar que tenho TEA (Transtorno do Espectro Autista), com dificuldades em socialização e na identificação de emoções e sentimentos, porém com facilidade em exatas e no seguir de instruções e direções. Possuo hiperfocos, como todo autista, que são descritos como o grande interesse em alguma atividade ou assunto que pode flutuar em intensidade ao longo do tempo, com o mais relevante sendo o meu hiperfoco na programação que tenho desde os 14 anos de idade.
-</main>
+<style lang="scss">
+  .tab {
+    width: 2ch;
+    display: inline-block;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 15px;
+      font-size: 22pt;
+    }
+
+    h1:before, h1:after{
+      content: "";
+      flex: 1 1;
+      border-bottom: 1px solid;
+      margin: auto;
+    }
+
+    h1:before {
+      margin-right: 10px
+    }
+
+    h1:after {
+      margin-left: 10px
+    }
+
+    p {
+      margin: 0 0 2ch;
+      font-size: 16pt;
+      max-width: 70ch;
+      text-align: justify;
+    }
+  }
+</style>
